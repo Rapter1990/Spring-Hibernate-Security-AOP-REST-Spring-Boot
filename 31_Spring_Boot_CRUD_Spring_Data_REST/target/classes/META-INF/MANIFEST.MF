@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: 31_Spring_Boot_CRUD_Spring_Data_REST
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Noyan
+Implementation-Vendor-Id: com.springboot
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/31_Spring_Boot_CRUD_Spring_Data_REST
+Created-By: Maven Integration for Eclipse
+
