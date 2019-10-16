@@ -1,0 +1,197 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>16_Spring_MVC_Form_Tags_Data_Binding_Drop_Down_Lists</groupId>
+  <artifactId>16_Spring_MVC_Form_Tags_Data_Binding_Drop_Down_Lists</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+  	<java_version>1.8</java_version>
+  	<maven_compiler_plugin>3.7.0</maven_compiler_plugin>
+  	<maven-war-plugin>3.2.1</maven-war-plugin>
+  	<org.springframework-version>5.1.9.RELEASE</org.springframework-version>
+  	<javax-annotation-version>1.3.2</javax-annotation-version>
+  	<javax-servlet-jsp-jstl-version>1.2.5</javax-servlet-jsp-jstl-version>
+  	<javax-servlet-jsp-jstl-api-version>1.2.2</javax-servlet-jsp-jstl-api-version>
+  	<commons-logging-version>1.2</commons-logging-version>
+  </properties>
+  
+  <dependencies>
+  
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+  
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-indexer</artifactId>
+	    <version>${org.springframework-version}</version>
+	    <scope>optional</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-support</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-expression</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-instrument</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jcl</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+  
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jms</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-messaging</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-oxm</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <version>${org.springframework-version}</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webflux</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-websocket</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<!-- Java 9 or above @PostConstruct or @PreDestroy can leads to error so define this dependency -->
+	<dependency>
+	    <groupId>javax.annotation</groupId>
+	    <artifactId>javax.annotation-api</artifactId>
+	    <version>${javax-annotation-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.glassfish.web</groupId>
+	    <artifactId>javax.servlet.jsp.jstl</artifactId>
+	    <version>${javax-servlet-jsp-jstl-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.servlet.jsp.jstl</groupId>
+	    <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+	    <version>${javax-servlet-jsp-jstl-api-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>${commons-logging-version}</version>
+	</dependency>
+  
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven_compiler_plugin}</version>
+        <configuration>
+          <source>${java_version}</source>
+          <target>${java_version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven-war-plugin}</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
