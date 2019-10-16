@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+		<property name="hibernate.connection.username">SPRINGDATABASE</property>
+		<property name="hibernate.connection.password">123</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		
+		
+		<property name="hibernate.c3p0.min_size">10</property>
+        <property name="hibernate.c3p0.max_size">30</property>
+        <property name="hibernate.c3p0.timeout">120</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">100</property>
+        <property name="hibernate.c3p0.privilegeSpawnedThreads">true</property>
+		<property name="hibernate.c3p0.contextClassLoaderSource">library</property>
+		
+		<!-- JDBC connection size (use the buit-in) -->
+		<property name="connection.pool_size">100</property>
+		
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+		
+		<!-- Echo all executed SQL to stdout -->
+		<property name="hibernate.show_sql">true</property>
+		
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
+		
+		<!-- Set the current session context -->
+		<property name="current_session_context_class">thread</property>
+		
+		
+		<!-- Drop and re-create the database schema on start-up -->
+		<!-- (ORA-02275: such a referential constraint already exists in the table) -->
+		<!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+		
+		<!-- Mapping class -->
+		<mapping class="entity.Student"/>
+		<mapping class="entity.Instructor"/>
+		<mapping class="entity.InstructorDetail"/>
+		<mapping class="entity.Course"/>
+		<mapping class="entity.Review"/>
+		<mapping class="entity.CourseStudent"/>
+		
+	</session-factory>
+</hibernate-configuration>
