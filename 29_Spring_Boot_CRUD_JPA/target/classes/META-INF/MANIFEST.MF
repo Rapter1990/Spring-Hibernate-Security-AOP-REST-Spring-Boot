@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: 29_Spring_Boot_CRUD_JPA
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Noyan
+Implementation-Vendor-Id: com.springboot
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/29_Spring_Boot_CRUD_JPA
+Created-By: Maven Integration for Eclipse
+
