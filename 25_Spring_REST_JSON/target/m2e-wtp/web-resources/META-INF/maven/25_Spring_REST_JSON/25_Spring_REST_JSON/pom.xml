@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>25_Spring_REST_JSON</groupId>
+  <artifactId>25_Spring_REST_JSON</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <properties>
+  	<java_version>1.8</java_version>
+  	<maven_compiler_plugin>3.7.0</maven_compiler_plugin>
+  	<maven-war-plugin>3.2.1</maven-war-plugin>
+  	<org.springframework-version>5.1.9.RELEASE</org.springframework-version>
+  	<jackson-version>2.9.9</jackson-version>
+  </properties>
+  
+  <dependencies>
+  
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson-version}</version>
+    </dependency>
+    
+    <dependency>
+    
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson-version}</version>
+    </dependency>
+    
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven_compiler_plugin}</version>
+        <configuration>
+          <source>${java_version}</source>
+          <target>${java_version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven-war-plugin}</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
