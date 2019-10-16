@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	    http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+	<!-- load the properties file: sport.properties -->
+	<context:property-placeholder location="classpath:/properties/sport.properties"/>	
+
+	<!-- define the dependency -->
+    <bean id="myFortuneService"
+    		class="com.java.ioc.HappyFortuneService">
+    	</bean>
+    
+ 	<bean id="myCoach"
+ 		class="com.java.ioc.TrackCoach">	 		
+ 		<!-- set up constructor injection -->
+ 		<constructor-arg ref="myFortuneService" />
+ 	</bean>
+	
+	<bean id="myCricketCoach"
+        class="com.java.ioc.CricketCoach"> 
+        
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="myFortuneService" />
+
+    </bean>
+    
+    <bean id="myFootballCoach"
+        class="com.java.ioc.FootballCoach"> 
+        
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="myFortuneService" />
+
+        <!-- inject literal values -->
+        <property name="emailAddress" value="thebestcoach@luv2code.com" />
+        <property name="team" value="Sunrisers Hyderabad" />
+
+    </bean>
+    
+    <bean id="myFootballCoachFromPropertiesFile"
+        class="com.java.ioc.FootballCoach"> 
+        
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="myFortuneService" />
+
+        <!-- inject literal values -->
+        <property name="emailAddress" value="${foo.email}" />
+        <property name="team" value="${foo.team}" />
+
+    </bean>
+    
+    
+    <!-- define the dependency -->    
+    <bean id="myRandomFortuneService"
+    		class="com.java.ioc.RandomFortuneService">
+    </bean>
+    
+ 	<bean id="myGolfCoach"
+ 		class="com.java.ioc.GolfCoach">	 
+ 		
+ 		<!-- set up constructor injection -->
+ 		<constructor-arg ref="myRandomFortuneService" />
+ 	</bean>
+	
+	<!-- 
+	Add a logger config to see logging messages.		
+	- For more detailed logs, set values to "FINEST"
+	- For info on logging levels, see: http://www.vogella.com/tutorials/Logging/article.html
+ -->
+    <bean id="myLoggerConfig" class="com.config.logger.LoggerConfig" init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+	
+</beans>
