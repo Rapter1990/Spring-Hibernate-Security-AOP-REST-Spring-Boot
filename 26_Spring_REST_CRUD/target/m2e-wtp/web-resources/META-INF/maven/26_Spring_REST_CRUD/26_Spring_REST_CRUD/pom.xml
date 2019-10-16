@@ -1,0 +1,142 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>26_Spring_REST_CRUD</groupId>
+  <artifactId>26_Spring_REST_CRUD</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <properties>
+  	<java_version>1.8</java_version>
+  	<maven_compiler_plugin>3.7.0</maven_compiler_plugin>
+  	<maven-war-plugin>3.2.1</maven-war-plugin>
+  	<org.springframework-version>5.1.9.RELEASE</org.springframework-version>
+  	<jackson-version>2.9.9</jackson-version>
+  	<javax-servlet-jsp-jstl-version>1.2.5</javax-servlet-jsp-jstl-version>
+  	<javax-servlet-jsp-jstl-api-version>1.2.2</javax-servlet-jsp-jstl-api-version>
+  	<hibernate.version>5.4.4.Final</hibernate.version>
+  	<mysql.connector.version>8.0.17</mysql.connector.version>
+  	<c3po.version>0.9.5.4</c3po.version>
+  	<jaxb-api-version>2.3.1</jaxb-api-version>
+  	<jboss-transaction-api_1.2_spec-version>1.1.1.Final</jboss-transaction-api_1.2_spec-version>
+  	<spring-security-version>5.1.6.RELEASE</spring-security-version>
+  </properties>
+  
+  <dependencies>
+  
+    <!-- Add Spring MVC and REST support -->
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency>
+  
+  <!-- Add Jackson Core for JSON converters -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson-version}</version>
+    </dependency>
+    
+    <!-- Add Jackson Bind for JSON converters -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson-version}</version>
+    </dependency>
+    
+    <!-- Add support for JSP ... get rid of Eclipse error -->			
+    <dependency>
+	    <groupId>org.glassfish.web</groupId>
+	    <artifactId>javax.servlet.jsp.jstl</artifactId>
+	    <version>${javax-servlet-jsp-jstl-version}</version>
+	</dependency>
+	
+	<!-- Add Servlet support for 
+			 Spring's AbstractAnnotationConfigDispatcherServletInitializer -->
+	<dependency>
+	    <groupId>javax.servlet.jsp.jstl</groupId>
+	    <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+	    <version>${javax-servlet-jsp-jstl-api-version}</version>
+	</dependency>
+	
+	<!-- Hibernate -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+
+	<!-- MySQL -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.connector.version}</version>
+	</dependency>
+
+	<!-- C3PO -->
+	<dependency>
+		<groupId>com.mchange</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>${c3po.version}</version>
+	</dependency>
+	
+	<!-- to compensate for java 9+ not including jaxb -->
+	<dependency>
+	    <groupId>javax.xml.bind</groupId>
+	    <artifactId>jaxb-api</artifactId>
+	    <version>${jaxb-api-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.jboss.spec.javax.transaction</groupId>
+	    <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+	    <version>${jboss-transaction-api_1.2_spec-version}</version>
+	</dependency>
+	
+	
+	<dependency>
+		 <groupId>org.springframework.security</groupId>
+		 <artifactId>spring-security-web</artifactId>
+		 <version>${spring-security-version}</version>
+	</dependency>
+		
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-config</artifactId>
+	    <version>${spring-security-version}</version>
+	</dependency>
+    
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven_compiler_plugin}</version>
+        <configuration>
+          <source>${java_version}</source>
+          <target>${java_version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven-war-plugin}</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

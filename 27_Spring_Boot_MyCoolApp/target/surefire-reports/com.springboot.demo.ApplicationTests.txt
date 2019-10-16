@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.springboot.demo.ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.748 s <<< FAILURE! - in com.springboot.demo.ApplicationTests
+contextLoads(com.springboot.demo.ApplicationTests)  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'funRestController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'coach.name' in value "${coach.name}"
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'coach.name' in value "${coach.name}"
+
