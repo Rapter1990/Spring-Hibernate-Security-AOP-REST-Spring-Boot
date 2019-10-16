@@ -1,0 +1,393 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>23_Spring_MVC_CRM_AOP_CRUD</groupId>
+  <artifactId>23_Spring_MVC_CRM_AOP_CRUD</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <properties>
+  	<java_version>1.8</java_version>
+  	<maven_compiler_plugin>3.7.0</maven_compiler_plugin>
+  	<maven-war-plugin>3.2.1</maven-war-plugin>
+  	<org.springframework-version>5.1.9.RELEASE</org.springframework-version>
+  	<javax-annotation-version>1.3.2</javax-annotation-version>
+  	<javax-servlet-jsp-jstl-version>1.2.5</javax-servlet-jsp-jstl-version>
+  	<javax-servlet-jsp-jstl-api-version>1.2.2</javax-servlet-jsp-jstl-api-version>
+  	<commons-logging-version>1.2</commons-logging-version>
+  	<hibernate-validator-version>6.0.17.Final</hibernate-validator-version>
+  	<javax-el-version>3.0.1-b09</javax-el-version>
+  	<validation-api-version>2.0.1.Final</validation-api-version>
+  	<jboss-logging-version>3.4.1.Final</jboss-logging-version>
+  	<classmate-version>1.5.0</classmate-version>
+  	<antlr-version>2.7.7</antlr-version>
+  	<byte-buddy-version>1.9.11</byte-buddy-version>
+  	<dom4j-version>2.1.1</dom4j-version>
+  	<FastInfoset-version>1.2.15</FastInfoset-version>
+  	<hibernate-commons-annotations-version>5.1.0.Final</hibernate-commons-annotations-version>
+  	<hibernate-core-version>5.4.4.Final</hibernate-core-version>
+  	<istack-commons-runtime-version>3.0.7</istack-commons-runtime-version>
+  	<jandex-version>2.0.5.Final</jandex-version>
+  	<javassist-version>3.24.0-GA</javassist-version>
+  	<javax.activation-api-version>1.2.0</javax.activation-api-version>
+  	<javax.persistence-api-version>2.2</javax.persistence-api-version>
+  	<jaxb-api-version>2.3.1</jaxb-api-version>
+  	<jaxb-runtime-version>2.3.1</jaxb-runtime-version>
+  	<jboss-logging-version>3.3.2.Final</jboss-logging-version>
+  	<jboss-transaction-api_1.2_spec-version>1.1.1.Final</jboss-transaction-api_1.2_spec-version>
+  	<stax-ex-version>1.8</stax-ex-version>
+  	<txw2-version>2.3.1</txw2-version>
+  	<oracle.jsbc.version>12.1.0</oracle.jsbc.version>
+  	<hibernate-c3p0-version>5.4.4.Final</hibernate-c3p0-version>
+  	<commons-fileupload-version>1.4</commons-fileupload-version>
+  	<aspectjweaver-version>1.9.4</aspectjweaver-version>
+  </properties>
+  
+  <dependencies>
+  
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-beans</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+  
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-indexer</artifactId>
+	    <version>${org.springframework-version}</version>
+	    <scope>optional</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-support</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-expression</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-instrument</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jcl</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+  
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jms</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-messaging</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-oxm</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <version>${org.springframework-version}</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webflux</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-websocket</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<!-- Java 9 or above @PostConstruct or @PreDestroy can leads to error so define this dependency -->
+	<dependency>
+	    <groupId>javax.annotation</groupId>
+	    <artifactId>javax.annotation-api</artifactId>
+	    <version>${javax-annotation-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.glassfish.web</groupId>
+	    <artifactId>javax.servlet.jsp.jstl</artifactId>
+	    <version>${javax-servlet-jsp-jstl-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.servlet.jsp.jstl</groupId>
+	    <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+	    <version>${javax-servlet-jsp-jstl-api-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>${commons-logging-version}</version>
+	</dependency>
+	
+	<dependency>
+	   <groupId>org.hibernate</groupId>
+	   <artifactId>hibernate-validator</artifactId>
+	   <version>${hibernate-validator-version}</version>
+	</dependency>
+	
+	<dependency>
+	   <groupId>org.hibernate</groupId>
+	   <artifactId>hibernate-validator-cdi</artifactId>
+	   <version>${hibernate-validator-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.hibernate.validator</groupId>
+	    <artifactId>hibernate-validator-annotation-processor</artifactId>
+	    <version>${hibernate-validator-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.validation</groupId>
+	    <artifactId>validation-api</artifactId>
+	    <version>${validation-api-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.jboss.logging</groupId>
+	    <artifactId>jboss-logging</artifactId>
+	    <version>${jboss-logging-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.fasterxml</groupId>
+	    <artifactId>classmate</artifactId>
+	    <version>${classmate-version}</version>
+	</dependency>
+	
+	<dependency>
+	   <groupId>org.glassfish</groupId>
+	   <artifactId>javax.el</artifactId>
+	   <version>${javax-el-version}</version>
+	</dependency>
+	
+	
+	<!-- Hibernate -->
+	<dependency>
+	    <groupId>antlr</groupId>
+	    <artifactId>antlr</artifactId>
+	    <version>${antlr-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>net.bytebuddy</groupId>
+	    <artifactId>byte-buddy</artifactId>
+	    <version>${byte-buddy-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.dom4j</groupId>
+	    <artifactId>dom4j</artifactId>
+	    <version>${dom4j-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.sun.xml.fastinfoset</groupId>
+	    <artifactId>FastInfoset</artifactId>
+	    <version>${FastInfoset-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.hibernate.common</groupId>
+	    <artifactId>hibernate-commons-annotations</artifactId>
+	    <version>${hibernate-commons-annotations-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>${hibernate-core-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.sun.istack</groupId>
+	    <artifactId>istack-commons-runtime</artifactId>
+	    <version>${istack-commons-runtime-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.jboss</groupId>
+	    <artifactId>jandex</artifactId>
+	    <version>${jandex-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.javassist</groupId>
+	    <artifactId>javassist</artifactId>
+	    <version>${javassist-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.activation</groupId>
+	    <artifactId>javax.activation-api</artifactId>
+	    <version>${javax.activation-api-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.persistence</groupId>
+	    <artifactId>javax.persistence-api</artifactId>
+	    <version>${javax.persistence-api-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.xml.bind</groupId>
+	    <artifactId>jaxb-api</artifactId>
+	    <version>${jaxb-api-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.glassfish.jaxb</groupId>
+	    <artifactId>jaxb-runtime</artifactId>
+	    <version>${jaxb-runtime-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.jboss.logging</groupId>
+	    <artifactId>jboss-logging</artifactId>
+	    <version>${jboss-logging-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.jboss.spec.javax.transaction</groupId>
+	    <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+	    <version>${jboss-transaction-api_1.2_spec-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.jvnet.staxex</groupId>
+	    <artifactId>stax-ex</artifactId>
+	    <version>${stax-ex-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.glassfish.jaxb</groupId>
+	    <artifactId>txw2</artifactId>
+	    <version>${txw2-version}</version>
+	</dependency>
+	
+	<dependency>
+        <groupId>com.oracle</groupId>
+        <artifactId>ojdbc7</artifactId>
+        <version>${oracle.jsbc.version}</version>
+        <scope>runtime</scope>
+    </dependency>
+    
+    <dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-c3p0</artifactId>
+	    <version>${hibernate-c3p0-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>${commons-fileupload-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>${aspectjweaver-version}</version>
+	</dependency>
+  
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven_compiler_plugin}</version>
+        <configuration>
+          <source>${java_version}</source>
+          <target>${java_version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven-war-plugin}</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
